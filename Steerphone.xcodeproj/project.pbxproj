@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89D40B0A1722981F00A67BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B091722981F00A67BB3 /* UIKit.framework */; };
+		89D40B0C1722981F00A67BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B0B1722981F00A67BB3 /* Foundation.framework */; };
+		89D40B0E1722981F00A67BB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B0D1722981F00A67BB3 /* CoreGraphics.framework */; };
+		89D40B141722981F00A67BB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B121722981F00A67BB3 /* InfoPlist.strings */; };
+		89D40B161722981F00A67BB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D40B151722981F00A67BB3 /* main.m */; };
+		89D40B1A1722981F00A67BB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D40B191722981F00A67BB3 /* AppDelegate.m */; };
+		89D40B1C1722981F00A67BB3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B1B1722981F00A67BB3 /* Default.png */; };
+		89D40B1E1722981F00A67BB3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B1D1722981F00A67BB3 /* Default@2x.png */; };
+		89D40B201722981F00A67BB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B1F1722981F00A67BB3 /* Default-568h@2x.png */; };
+		89D40B231722981F00A67BB3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B211722981F00A67BB3 /* MainStoryboard.storyboard */; };
+		89D40B261722981F00A67BB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D40B251722981F00A67BB3 /* ViewController.m */; };
+		89D40B2E1722981F00A67BB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B2D1722981F00A67BB3 /* SenTestingKit.framework */; };
+		89D40B2F1722981F00A67BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B091722981F00A67BB3 /* UIKit.framework */; };
+		89D40B301722981F00A67BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B0B1722981F00A67BB3 /* Foundation.framework */; };
+		89D40B381722981F00A67BB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B361722981F00A67BB3 /* InfoPlist.strings */; };
+		89D40B3B1722981F00A67BB3 /* SteerphoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D40B3A1722981F00A67BB3 /* SteerphoneTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89D40B311722981F00A67BB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D40AFE1722981F00A67BB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D40B051722981F00A67BB3;
+			remoteInfo = Steerphone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89D40B061722981F00A67BB3 /* Steerphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steerphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D40B091722981F00A67BB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		89D40B0B1722981F00A67BB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		89D40B0D1722981F00A67BB3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		89D40B111722981F00A67BB3 /* Steerphone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Steerphone-Info.plist"; sourceTree = "<group>"; };
+		89D40B131722981F00A67BB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89D40B151722981F00A67BB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89D40B171722981F00A67BB3 /* Steerphone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Steerphone-Prefix.pch"; sourceTree = "<group>"; };
+		89D40B181722981F00A67BB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		89D40B191722981F00A67BB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		89D40B1B1722981F00A67BB3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		89D40B1D1722981F00A67BB3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		89D40B1F1722981F00A67BB3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		89D40B221722981F00A67BB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		89D40B241722981F00A67BB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		89D40B251722981F00A67BB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		89D40B2C1722981F00A67BB3 /* SteerphoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteerphoneTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D40B2D1722981F00A67BB3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		89D40B351722981F00A67BB3 /* SteerphoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SteerphoneTests-Info.plist"; sourceTree = "<group>"; };
+		89D40B371722981F00A67BB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89D40B391722981F00A67BB3 /* SteerphoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteerphoneTests.h; sourceTree = "<group>"; };
+		89D40B3A1722981F00A67BB3 /* SteerphoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteerphoneTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89D40B031722981F00A67BB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D40B0A1722981F00A67BB3 /* UIKit.framework in Frameworks */,
+				89D40B0C1722981F00A67BB3 /* Foundation.framework in Frameworks */,
+				89D40B0E1722981F00A67BB3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D40B281722981F00A67BB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D40B2E1722981F00A67BB3 /* SenTestingKit.framework in Frameworks */,
+				89D40B2F1722981F00A67BB3 /* UIKit.framework in Frameworks */,
+				89D40B301722981F00A67BB3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89D40AFD1722981F00A67BB3 = {
+			isa = PBXGroup;
+			children = (
+				89D40B0F1722981F00A67BB3 /* Steerphone */,
+				89D40B331722981F00A67BB3 /* SteerphoneTests */,
+				89D40B081722981F00A67BB3 /* Frameworks */,
+				89D40B071722981F00A67BB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89D40B071722981F00A67BB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B061722981F00A67BB3 /* Steerphone.app */,
+				89D40B2C1722981F00A67BB3 /* SteerphoneTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89D40B081722981F00A67BB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B091722981F00A67BB3 /* UIKit.framework */,
+				89D40B0B1722981F00A67BB3 /* Foundation.framework */,
+				89D40B0D1722981F00A67BB3 /* CoreGraphics.framework */,
+				89D40B2D1722981F00A67BB3 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89D40B0F1722981F00A67BB3 /* Steerphone */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B181722981F00A67BB3 /* AppDelegate.h */,
+				89D40B191722981F00A67BB3 /* AppDelegate.m */,
+				89D40B211722981F00A67BB3 /* MainStoryboard.storyboard */,
+				89D40B241722981F00A67BB3 /* ViewController.h */,
+				89D40B251722981F00A67BB3 /* ViewController.m */,
+				89D40B101722981F00A67BB3 /* Supporting Files */,
+			);
+			path = Steerphone;
+			sourceTree = "<group>";
+		};
+		89D40B101722981F00A67BB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B111722981F00A67BB3 /* Steerphone-Info.plist */,
+				89D40B121722981F00A67BB3 /* InfoPlist.strings */,
+				89D40B151722981F00A67BB3 /* main.m */,
+				89D40B171722981F00A67BB3 /* Steerphone-Prefix.pch */,
+				89D40B1B1722981F00A67BB3 /* Default.png */,
+				89D40B1D1722981F00A67BB3 /* Default@2x.png */,
+				89D40B1F1722981F00A67BB3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89D40B331722981F00A67BB3 /* SteerphoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B391722981F00A67BB3 /* SteerphoneTests.h */,
+				89D40B3A1722981F00A67BB3 /* SteerphoneTests.m */,
+				89D40B341722981F00A67BB3 /* Supporting Files */,
+			);
+			path = SteerphoneTests;
+			sourceTree = "<group>";
+		};
+		89D40B341722981F00A67BB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B351722981F00A67BB3 /* SteerphoneTests-Info.plist */,
+				89D40B361722981F00A67BB3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89D40B051722981F00A67BB3 /* Steerphone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D40B3E1722981F00A67BB3 /* Build configuration list for PBXNativeTarget "Steerphone" */;
+			buildPhases = (
+				89D40B021722981F00A67BB3 /* Sources */,
+				89D40B031722981F00A67BB3 /* Frameworks */,
+				89D40B041722981F00A67BB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Steerphone;
+			productName = Steerphone;
+			productReference = 89D40B061722981F00A67BB3 /* Steerphone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89D40B2B1722981F00A67BB3 /* SteerphoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D40B411722981F00A67BB3 /* Build configuration list for PBXNativeTarget "SteerphoneTests" */;
+			buildPhases = (
+				89D40B271722981F00A67BB3 /* Sources */,
+				89D40B281722981F00A67BB3 /* Frameworks */,
+				89D40B291722981F00A67BB3 /* Resources */,
+				89D40B2A1722981F00A67BB3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89D40B321722981F00A67BB3 /* PBXTargetDependency */,
+			);
+			name = SteerphoneTests;
+			productName = SteerphoneTests;
+			productReference = 89D40B2C1722981F00A67BB3 /* SteerphoneTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89D40AFE1722981F00A67BB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = mneorr.com;
+			};
+			buildConfigurationList = 89D40B011722981F00A67BB3 /* Build configuration list for PBXProject "Steerphone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 89D40AFD1722981F00A67BB3;
+			productRefGroup = 89D40B071722981F00A67BB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89D40B051722981F00A67BB3 /* Steerphone */,
+				89D40B2B1722981F00A67BB3 /* SteerphoneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89D40B041722981F00A67BB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D40B141722981F00A67BB3 /* InfoPlist.strings in Resources */,
+				89D40B1C1722981F00A67BB3 /* Default.png in Resources */,
+				89D40B1E1722981F00A67BB3 /* Default@2x.png in Resources */,
+				89D40B201722981F00A67BB3 /* Default-568h@2x.png in Resources */,
+				89D40B231722981F00A67BB3 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D40B291722981F00A67BB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D40B381722981F00A67BB3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89D40B2A1722981F00A67BB3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89D40B021722981F00A67BB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D40B161722981F00A67BB3 /* main.m in Sources */,
+				89D40B1A1722981F00A67BB3 /* AppDelegate.m in Sources */,
+				89D40B261722981F00A67BB3 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D40B271722981F00A67BB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D40B3B1722981F00A67BB3 /* SteerphoneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89D40B321722981F00A67BB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D40B051722981F00A67BB3 /* Steerphone */;
+			targetProxy = 89D40B311722981F00A67BB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89D40B121722981F00A67BB3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89D40B131722981F00A67BB3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		89D40B211722981F00A67BB3 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89D40B221722981F00A67BB3 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		89D40B361722981F00A67BB3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89D40B371722981F00A67BB3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89D40B3C1722981F00A67BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		89D40B3D1722981F00A67BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89D40B3F1722981F00A67BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Steerphone/Steerphone-Prefix.pch";
+				INFOPLIST_FILE = "Steerphone/Steerphone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		89D40B401722981F00A67BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Steerphone/Steerphone-Prefix.pch";
+				INFOPLIST_FILE = "Steerphone/Steerphone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		89D40B421722981F00A67BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Steerphone.app/Steerphone";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Steerphone/Steerphone-Prefix.pch";
+				INFOPLIST_FILE = "SteerphoneTests/SteerphoneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		89D40B431722981F00A67BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Steerphone.app/Steerphone";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Steerphone/Steerphone-Prefix.pch";
+				INFOPLIST_FILE = "SteerphoneTests/SteerphoneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89D40B011722981F00A67BB3 /* Build configuration list for PBXProject "Steerphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D40B3C1722981F00A67BB3 /* Debug */,
+				89D40B3D1722981F00A67BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D40B3E1722981F00A67BB3 /* Build configuration list for PBXNativeTarget "Steerphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D40B3F1722981F00A67BB3 /* Debug */,
+				89D40B401722981F00A67BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		89D40B411722981F00A67BB3 /* Build configuration list for PBXNativeTarget "SteerphoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D40B421722981F00A67BB3 /* Debug */,
+				89D40B431722981F00A67BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89D40AFE1722981F00A67BB3 /* Project object */;
+}
