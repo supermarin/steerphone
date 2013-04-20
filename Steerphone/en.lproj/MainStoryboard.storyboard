@@ -48,9 +48,19 @@
                                     <action selector="throttleReleased:" destination="2" eventType="touchUpInside" id="fJ1-T9-AHf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3j-zz-iIe">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="7NO-8V-vdC"/>
+                                    <constraint firstAttribute="height" constant="66" id="SFf-0s-jRx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <color key="textColor" red="0.38589379429082338" green="0.90202530570652173" blue="0.33973131656728855" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="X3j-zz-iIe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-29" id="JYG-v8-vud"/>
                             <constraint firstItem="JtI-iV-qSw" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="LyO-2j-VhD"/>
                             <constraint firstItem="JfI-I8-iwO" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="OW7-C2-EBO"/>
                             <constraint firstItem="JtI-iV-qSw" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="TXL-j9-h9D"/>
@@ -60,10 +70,14 @@
                             <constraint firstItem="RAm-k6-bkZ" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="iHZ-C1-1x0"/>
                             <constraint firstItem="RAm-k6-bkZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="nNS-Am-kAG"/>
                             <constraint firstItem="JtI-iV-qSw" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="qSQ-dZ-fxJ"/>
+                            <constraint firstItem="X3j-zz-iIe" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="523" id="t4G-Np-s4o"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="connectionStatus" destination="X3j-zz-iIe" id="nSJ-zG-OVG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,7 +99,7 @@
                 <relationship kind="action" name="brakeReleased:"/>
                 <relationship kind="action" name="throttlePressed:"/>
                 <relationship kind="action" name="throttleReleased:"/>
-                <relationship kind="outlet" name="wheelValueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="connectionStatus" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

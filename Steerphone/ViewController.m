@@ -11,7 +11,7 @@
 #import "SocketIO.h"
 
 @interface ViewController ()<SocketIODelegate>
-@property (strong, nonatomic) IBOutlet UILabel *wheelValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *connectionStatus;
 @property (strong, nonatomic) SocketIO *socketIO;
 @property (strong, nonatomic) NSOperationQueue *queue;
 @property (strong, nonatomic) CMMotionManager *motionManager;
@@ -104,15 +104,17 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
 
 - (void)socketIODidConnect:(SocketIO *)socket {
     NSLog(@"SocketIO did connect! %@", socket);
+    self.connectionStatus.textColor = [UIColor colorWithRed:.2 green:.8 blue:.3 alpha:1];
 }
 - (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error {
-    
     NSLog(@"SocketIO did disconnect!: %@", error);
+    self.connectionStatus.textColor = [UIColor colorWithRed:.8 green:.2 blue:.3 alpha:1];
     [self maintainConnection];
 }
 
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error {
     NSLog(@"SocketIO error: %@", error);
+    self.connectionStatus.textColor = [UIColor colorWithRed:.8 green:.2 blue:.3 alpha:1];
     [self maintainConnection];
 }
 
