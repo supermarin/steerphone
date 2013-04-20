@@ -22,14 +22,13 @@
 @property (atomic) NSNumber *wheelValue;
 @end
 
-static CGFloat const UPDATE_INTERVAL = 1 / 5;
+static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
 
 @implementation ViewController
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.socketIO = [[SocketIO alloc] initWithDelegate:self];
     self.queue = [[NSOperationQueue alloc] init];
@@ -37,8 +36,7 @@ static CGFloat const UPDATE_INTERVAL = 1 / 5;
     [self listenToGyroscope];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     self.socketIO = nil;
 }
@@ -52,19 +50,14 @@ static CGFloat const UPDATE_INTERVAL = 1 / 5;
 
 - (void)listenToGyroscope {
     self.motionManager = [[CMMotionManager alloc] init];
+    [self.motionManager setDeviceMotionUpdateInterval:UPDATE_INTERVAL];
     [self.motionManager setGyroUpdateInterval:UPDATE_INTERVAL];
     
-    [self.motionManager startGyroUpdatesToQueue:self.queue withHandler:^(CMGyroData *gyroData, NSError *error) {
-        self.wheelValue = [self calculateWheelValueFromGyroData:gyroData];
-//        self.wheelValueLabel.text = self.wheelValue.description;
-        NSLog(@"Current angle: %@", self.wheelValue);
+    [self.motionManager startDeviceMotionUpdatesToQueue:self.queue withHandler:^(CMDeviceMotion *motion, NSError *error) {
+        self.wheelValue = @(180.0f / M_PI * motion.attitude.pitch);
+        NSLog(@"Current value: %@", self.wheelValue);
         [self pingServer];
     }];
-}
-
-- (NSNumber *)calculateWheelValueFromGyroData:(CMGyroData *)gyroData {
-    // shoot
-    return @(42.3);
 }
 
 - (IBAction)brakePressed:(id)sender {
@@ -106,7 +99,6 @@ static CGFloat const UPDATE_INTERVAL = 1 / 5;
 
 - (void)socketIODidConnect:(SocketIO *)socket {
     NSLog(@"SocketIO did connect! %@", socket);
-//    [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL target:self selector:@selector(updateServerInBackground) userInfo:nil repeats:YES];
 }
 - (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error {
     NSLog(@"SocketIO did disconnect!: %@", error);
