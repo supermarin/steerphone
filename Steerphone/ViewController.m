@@ -7,14 +7,20 @@
 //
 
 #import "ViewController.h"
+#import <CoreMotion/CoreMotion.h>
 #import "SocketIO.h"
 
 @interface ViewController ()<SocketIODelegate>
-@property (strong, nonatomic) SocketIO *socketIO;
 @property (weak, nonatomic) IBOutlet UILabel *wheelValueLabel;
+@property (strong, nonatomic) SocketIO *socketIO;
+@property (strong, nonatomic) NSOperationQueue *queue;
+
+#pragma mark - Control states
 @property (atomic) BOOL brakeIsPressed;
 @property (atomic) BOOL throttleIsPressed;
 @end
+
+static CGFloat const UPDATE_INTERVAL = 1 / 20;
 
 @implementation ViewController
 
@@ -24,7 +30,8 @@
 {
     [super viewDidLoad];
     self.socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [self connect];
+    self.queue = [[NSOperationQueue alloc] init];
+    [self connectToSocket];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,8 +43,16 @@
 
 #pragma mark - Private
 
-- (void)connect {
+- (void)connectToSocket {
     [self.socketIO connectToHost:@"db.whoapi.com" onPort:666];
+}
+
+- (void)listenToGyroscope {
+    CMMotionManager *manager = [[CMMotionManager alloc] init];
+    [manager setGyroUpdateInterval:UPDATE_INTERVAL];
+    [manager startGyroUpdatesToQueue:self.queue withHandler:^(CMGyroData *gyroData, NSError *error) {
+       // ovdje do the math
+    }];
 }
 
 - (IBAction)brakePressed:(id)sender {
@@ -69,7 +84,10 @@
 }
 
 - (void)updateServerInBackground {
-    [self pingServer];
+    __weak ViewController *weakSelf = self;
+    [self.queue addOperationWithBlock:^{
+        [weakSelf pingServer];
+    }];
 }
 
 - (NSNumber *)wheelValue {
@@ -80,25 +98,14 @@
 
 - (void)socketIODidConnect:(SocketIO *)socket {
     NSLog(@"SocketIO did connect! %@", socket);
-    [NSTimer scheduledTimerWithTimeInterval:1/20 target:self selector:@selector(updateServerInBackground) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL target:self selector:@selector(updateServerInBackground) userInfo:nil repeats:YES];
 }
 - (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error {
     NSLog(@"SocketIO did disconnect!: %@", error);
 }
-- (void)socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet {
-    NSLog(@"SocketIO : %@", packet);
-}
-- (void)socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet {
-    NSLog(@"SocketIO: %@", packet);
-}
-- (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
-    NSLog(@"SocketIO: %@", packet);
-}
-- (void)socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet {
-    NSLog(@"SocketIO: %@", packet);
-}
+
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error {
-    NSLog(@"SocketIO: %@", error);
+    NSLog(@"SocketIO error: %@", error);
 }
 
 @end
