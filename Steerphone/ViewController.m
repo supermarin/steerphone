@@ -33,14 +33,13 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
     self.socketIO = [[SocketIO alloc] initWithDelegate:self];
     self.queue = [[NSOperationQueue alloc] init];
     [self connectToSocket];
-    [self listenToGyroscope];
+    [self listenToDeviceMotions];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    self.socketIO = nil;
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.socketIO disconnect];
+    [super viewDidDisappear:animated];
 }
-
 
 #pragma mark - Private
 
@@ -48,14 +47,20 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
     [self.socketIO connectToHost:@"db.whoapi.com" onPort:666];
 }
 
-- (void)listenToGyroscope {
+- (void)maintainConnection {
+    if (self.socketIO.isConnected || self.socketIO.isConnecting) return;
+    
+    [self performSelector:@selector(connectToSocket) withObject:nil afterDelay:1];
+}
+
+- (void)listenToDeviceMotions {
     self.motionManager = [[CMMotionManager alloc] init];
     [self.motionManager setDeviceMotionUpdateInterval:UPDATE_INTERVAL];
     [self.motionManager setGyroUpdateInterval:UPDATE_INTERVAL];
     
     [self.motionManager startDeviceMotionUpdatesToQueue:self.queue withHandler:^(CMDeviceMotion *motion, NSError *error) {
-        self.wheelValue = @(180.0f / M_PI * motion.attitude.pitch);
-        NSLog(@"Current value: %@", self.wheelValue);
+        self.wheelValue = @(180.0f / M_PI * motion.attitude.pitch * -1);
+        NSLog(@"Wheel: %@", self.wheelValue);
         [self pingServer];
     }];
 }
@@ -101,11 +106,14 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
     NSLog(@"SocketIO did connect! %@", socket);
 }
 - (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error {
+    
     NSLog(@"SocketIO did disconnect!: %@", error);
+    [self maintainConnection];
 }
 
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error {
     NSLog(@"SocketIO error: %@", error);
+    [self maintainConnection];
 }
 
 @end

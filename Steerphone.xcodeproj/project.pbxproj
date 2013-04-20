@@ -25,6 +25,11 @@
 		89D40B381722981F00A67BB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B361722981F00A67BB3 /* InfoPlist.strings */; };
 		89D40B3B1722981F00A67BB3 /* SteerphoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D40B3A1722981F00A67BB3 /* SteerphoneTests.m */; };
 		89D40B451722BAC000A67BB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B441722BAC000A67BB3 /* CoreMotion.framework */; };
+		89D40B501722E06000A67BB3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B4B1722E06000A67BB3 /* iTunesArtwork@2x.png */; };
+		89D40B541722E14100A67BB3 /* ios-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B511722E14100A67BB3 /* ios-background@2x.png */; };
+		89D40B551722E14100A67BB3 /* ios-icon-break@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B521722E14100A67BB3 /* ios-icon-break@2x.png */; };
+		89D40B561722E14100A67BB3 /* ios-icon-throttle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B531722E14100A67BB3 /* ios-icon-throttle@2x.png */; };
+		89D40B581722ECB900A67BB3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D40B571722ECB900A67BB3 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,11 @@
 		89D40B391722981F00A67BB3 /* SteerphoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteerphoneTests.h; sourceTree = "<group>"; };
 		89D40B3A1722981F00A67BB3 /* SteerphoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteerphoneTests.m; sourceTree = "<group>"; };
 		89D40B441722BAC000A67BB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		89D40B4B1722E06000A67BB3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		89D40B511722E14100A67BB3 /* ios-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-background@2x.png"; sourceTree = "<group>"; };
+		89D40B521722E14100A67BB3 /* ios-icon-break@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-icon-break@2x.png"; sourceTree = "<group>"; };
+		89D40B531722E14100A67BB3 /* ios-icon-throttle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-icon-throttle@2x.png"; sourceTree = "<group>"; };
+		89D40B571722ECB900A67BB3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,8 @@
 		89D40AFD1722981F00A67BB3 = {
 			isa = PBXGroup;
 			children = (
+				89D40B571722ECB900A67BB3 /* Icon@2x.png */,
+				89D40B461722E06000A67BB3 /* Resources */,
 				89D40B0F1722981F00A67BB3 /* Steerphone */,
 				89D40B331722981F00A67BB3 /* SteerphoneTests */,
 				89D40B081722981F00A67BB3 /* Frameworks */,
@@ -168,6 +180,18 @@
 				89D40B361722981F00A67BB3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89D40B461722E06000A67BB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89D40B4B1722E06000A67BB3 /* iTunesArtwork@2x.png */,
+				89D40B511722E14100A67BB3 /* ios-background@2x.png */,
+				89D40B521722E14100A67BB3 /* ios-icon-break@2x.png */,
+				89D40B531722E14100A67BB3 /* ios-icon-throttle@2x.png */,
+			);
+			name = Resources;
+			path = Steerphone/Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +272,11 @@
 				89D40B1E1722981F00A67BB3 /* Default@2x.png in Resources */,
 				89D40B201722981F00A67BB3 /* Default-568h@2x.png in Resources */,
 				89D40B231722981F00A67BB3 /* MainStoryboard.storyboard in Resources */,
+				89D40B501722E06000A67BB3 /* iTunesArtwork@2x.png in Resources */,
+				89D40B541722E14100A67BB3 /* ios-background@2x.png in Resources */,
+				89D40B551722E14100A67BB3 /* ios-icon-break@2x.png in Resources */,
+				89D40B561722E14100A67BB3 /* ios-icon-throttle@2x.png in Resources */,
+				89D40B581722ECB900A67BB3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
