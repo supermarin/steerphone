@@ -11,16 +11,18 @@
 #import "SocketIO.h"
 
 @interface ViewController ()<SocketIODelegate>
-@property (weak, nonatomic) IBOutlet UILabel *wheelValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *wheelValueLabel;
 @property (strong, nonatomic) SocketIO *socketIO;
 @property (strong, nonatomic) NSOperationQueue *queue;
+@property (strong, nonatomic) CMMotionManager *motionManager;
 
 #pragma mark - Control states
 @property (atomic) BOOL brakeIsPressed;
 @property (atomic) BOOL throttleIsPressed;
+@property (atomic) NSNumber *wheelValue;
 @end
 
-static CGFloat const UPDATE_INTERVAL = 1 / 20;
+static CGFloat const UPDATE_INTERVAL = 1 / 5;
 
 @implementation ViewController
 
@@ -32,6 +34,7 @@ static CGFloat const UPDATE_INTERVAL = 1 / 20;
     self.socketIO = [[SocketIO alloc] initWithDelegate:self];
     self.queue = [[NSOperationQueue alloc] init];
     [self connectToSocket];
+    [self listenToGyroscope];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,11 +51,20 @@ static CGFloat const UPDATE_INTERVAL = 1 / 20;
 }
 
 - (void)listenToGyroscope {
-    CMMotionManager *manager = [[CMMotionManager alloc] init];
-    [manager setGyroUpdateInterval:UPDATE_INTERVAL];
-    [manager startGyroUpdatesToQueue:self.queue withHandler:^(CMGyroData *gyroData, NSError *error) {
-       // ovdje do the math
+    self.motionManager = [[CMMotionManager alloc] init];
+    [self.motionManager setGyroUpdateInterval:UPDATE_INTERVAL];
+    
+    [self.motionManager startGyroUpdatesToQueue:self.queue withHandler:^(CMGyroData *gyroData, NSError *error) {
+        self.wheelValue = [self calculateWheelValueFromGyroData:gyroData];
+//        self.wheelValueLabel.text = self.wheelValue.description;
+        NSLog(@"Current angle: %@", self.wheelValue);
+        [self pingServer];
     }];
+}
+
+- (NSNumber *)calculateWheelValueFromGyroData:(CMGyroData *)gyroData {
+    // shoot
+    return @(42.3);
 }
 
 - (IBAction)brakePressed:(id)sender {
@@ -76,7 +88,7 @@ static CGFloat const UPDATE_INTERVAL = 1 / 20;
 }
 
 - (void)pingServer {
-    NSMutableDictionary *defaultParams = @{ @"wheel": [self wheelValue] }.mutableCopy;
+    NSMutableDictionary *defaultParams = @{ @"wheel": self.wheelValue }.mutableCopy;
     if (self.brakeIsPressed) defaultParams[@"brake"] = @(YES);
     if (self.throttleIsPressed) defaultParams[@"throttle"] = @(YES);
     
@@ -88,10 +100,6 @@ static CGFloat const UPDATE_INTERVAL = 1 / 20;
     [self.queue addOperationWithBlock:^{
         [weakSelf pingServer];
     }];
-}
-
-- (NSNumber *)wheelValue {
-    return @(42);
 }
 
 #pragma mark - SocketIO delegate
