@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SocketIO.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SocketIO</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setHost:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *host</Declaration>
+			
+			
+			<Anchor>//api/name/host</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/host</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *host</Declaration>
+			
+			
+			<Anchor>//api/name/host</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setPort:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger port</Declaration>
+			
+			
+			<Anchor>//api/name/port</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/port</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger port</Declaration>
+			
+			
+			<Anchor>//api/name/port</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setSid:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *sid</Declaration>
+			
+			
+			<Anchor>//api/name/sid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/sid</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *sid</Declaration>
+			
+			
+			<Anchor>//api/name/sid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setHeartbeatTimeout:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval heartbeatTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/heartbeatTimeout</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/heartbeatTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval heartbeatTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/heartbeatTimeout</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setUseSecure:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL useSecure</Declaration>
+			
+			
+			<Anchor>//api/name/useSecure</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/useSecure</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL useSecure</Declaration>
+			
+			
+			<Anchor>//api/name/useSecure</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setIsConnecting:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isConnected , isConnecting</Declaration>
+			
+			
+			<Anchor>//api/name/isConnecting</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/isConnecting</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isConnected , isConnecting</Declaration>
+			
+			
+			<Anchor>//api/name/isConnecting</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, unsafe_unretained) id&lt;SocketIODelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SocketIO/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, unsafe_unretained) id&lt;SocketIODelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithDelegate:(id&lt;SocketIODelegate&gt;)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDelegate:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/connectToHost:onPort:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)connectToHost:(NSString *)host onPort:(NSInteger)port</Declaration>
+			
+			
+			<Anchor>//api/name/connectToHost:onPort:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/connectToHost:onPort:withParams:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)connectToHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params</Declaration>
+			
+			
+			<Anchor>//api/name/connectToHost:onPort:withParams:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/connectToHost:onPort:withParams:withNamespace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)connectToHost:(NSString *)host onPort:(NSInteger)port withParams:(NSDictionary *)params withNamespace:(NSString *)endpoint</Declaration>
+			
+			
+			<Anchor>//api/name/connectToHost:onPort:withParams:withNamespace:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/disconnect</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)disconnect</Declaration>
+			
+			
+			<Anchor>//api/name/disconnect</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendMessage:(NSString *)data</Declaration>
+			
+			
+			<Anchor>//api/name/sendMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendMessage:withAcknowledge:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendMessage:(NSString *)data withAcknowledge:(SocketIOCallback)function</Declaration>
+			
+			
+			<Anchor>//api/name/sendMessage:withAcknowledge:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendJSON:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendJSON:(NSDictionary *)data</Declaration>
+			
+			
+			<Anchor>//api/name/sendJSON:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendJSON:withAcknowledge:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendJSON:(NSDictionary *)data withAcknowledge:(SocketIOCallback)function</Declaration>
+			
+			
+			<Anchor>//api/name/sendJSON:withAcknowledge:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendEvent:withData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendEvent:(NSString *)eventName withData:(id)data</Declaration>
+			
+			
+			<Anchor>//api/name/sendEvent:withData:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendEvent:withData:andAcknowledge:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendEvent:(NSString *)eventName withData:(id)data andAcknowledge:(SocketIOCallback)function</Declaration>
+			
+			
+			<Anchor>//api/name/sendEvent:withData:andAcknowledge:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SocketIO/sendAcknowledgement:withArgs:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)sendAcknowledgement:(NSString *)pId withArgs:(NSArray *)data</Declaration>
+			
+			
+			<Anchor>//api/name/sendAcknowledgement:withArgs:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

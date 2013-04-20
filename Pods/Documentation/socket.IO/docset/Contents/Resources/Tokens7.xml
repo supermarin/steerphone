@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SocketIOTransport.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SocketIOTransport</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIOTransport/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithDelegate:(id&lt;SocketIOTransportDelegate&gt;)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDelegate:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIOTransport/open</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>- (void)open</Declaration>
+			
+			
+			<Anchor>//api/name/open</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIOTransport/close</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>- (void)close</Declaration>
+			
+			
+			<Anchor>//api/name/close</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIOTransport/isReady</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isReady</Declaration>
+			
+			
+			<Anchor>//api/name/isReady</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIOTransport/send:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>- (void)send:(NSString *)request</Declaration>
+			
+			
+			<Anchor>//api/name/send:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIOTransport/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, unsafe_unretained) id&lt;SocketIOTransportDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/SocketIOTransport/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIOTransport.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, unsafe_unretained) id&lt;SocketIOTransportDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/mneorr/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.socketrocket.SocketRocket-0.2.0.docset
+Time: 2013-04-20 09:38:29 +0000

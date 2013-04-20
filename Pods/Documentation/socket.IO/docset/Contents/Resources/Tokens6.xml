@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SocketIODelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SocketIODelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIODidConnect:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIODidConnect:(SocketIO *)socket</Declaration>
+			
+			
+			<Anchor>//api/name/socketIODidConnect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIODidDisconnect:disconnectedWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/socketIODidDisconnect:disconnectedWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIO:didReceiveMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet</Declaration>
+			
+			
+			<Anchor>//api/name/socketIO:didReceiveMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIO:didReceiveJSON:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet</Declaration>
+			
+			
+			<Anchor>//api/name/socketIO:didReceiveJSON:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIO:didReceiveEvent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet</Declaration>
+			
+			
+			<Anchor>//api/name/socketIO:didReceiveEvent:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIO:didSendMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet</Declaration>
+			
+			
+			<Anchor>//api/name/socketIO:didSendMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIO:onError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIO:(SocketIO *)socket onError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/socketIO:onError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIO:failedToConnectWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIO:(SocketIO *)socket failedToConnectWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/socketIO:failedToConnectWithError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SocketIODelegate/socketIOHandshakeFailed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SocketIO.h</DeclaredIn>			
+			
+			<Declaration>- (void)socketIOHandshakeFailed:(SocketIO *)socket</Declaration>
+			
+			
+			<Anchor>//api/name/socketIOHandshakeFailed:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

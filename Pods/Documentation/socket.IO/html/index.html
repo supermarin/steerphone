@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>socket.IO 0.3.2 Reference</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">socket.IO 0.3.2 </a></h1>
+				<a id="developerHome" href="index.html">Philipp Kyeck</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">socket.IO 0.3.2 Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<div id="overview_contents" role="main">
+				<div class="main-navigation navigation-top">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">socket.IO 0.3.2 Reference</h1>
+					</div>		
+				</div>
+				<div id="container">
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>Socket.IO / Objective C Library (ARC version)</h1>
+
+<p>  Interface to communicate between Objective C and <a href="http://socket.io/">Socket.IO</a>
+  with the help of websockets or <a href="[http://en.wikipedia.org/wiki/Push](http://en.wikipedia.org/wiki/Push">Long-Polling</a>_technology#Long_polling). Originally based on fpotter&rsquo;s <a href="https://github.com/fpotter/socketio-cocoa">socketio-cocoa</a>
+  it uses other libraries/classes like</p>
+
+<ul>
+<li> <a href="https://github.com/square/SocketRocket">SocketRocket</a>
+Look <a href="https://github.com/square/SocketRocket#installing-ios">here</a> for further instructions how to use/install SocketRocket.</li>
+</ul>
+
+
+<p>  JSON serialization can be provided by SBJson (json-framework), JSONKit or by Foundation in OS X 10.7/iOS 5.0.  These are selected at runtime and introduce no source-level dependencies.
+   * <a href="https://github.com/stig/json-framework/">json-framework</a> (optional)
+   * <a href="https://github.com/johnezang/JSONKit/">JSONKit</a> (optional)</p>
+
+<h2>Non-ARC version</h2>
+
+<p>If you&rsquo;re old school &ndash; there&rsquo;s still the <a href="https://github.com/pkyeck/socket.IO-objc/tree/non-arc">non-ARC version</a> for you.
+This version (the non-ARC one) is out-of-date and won&rsquo;t be maintained any further (at least not by me).</p>
+
+<h2>Usage</h2>
+
+<p>The easiest way to connect to your Socket.IO / node.js server is</p>
+
+<p><code>objective-c
+SocketIO *socketIO = [[SocketIO alloc] initWithDelegate:self];
+[socketIO connectToHost:@"localhost" onPort:3000];
+</code></p>
+
+<p>If required, additional parameters can be included in the handshake by adding an <code>NSDictionary</code> to the <code>withParams</code> option:</p>
+
+<p>``` objective-c
+[socketIO connectToHost:@&ldquo;localhost&rdquo;</p>
+
+<pre><code>             onPort:3000
+         withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
+</code></pre>
+
+<p>];
+```</p>
+
+<p>A namespace can also be defined in the connection details:</p>
+
+<p><code>objective-c
+[socketIO connectToHost:@"localhost" onPort:3000 withParams:nil withNamespace:@"/users"];
+</code></p>
+
+<p>There are different methods to send data to the server</p>
+
+<p><code>objective-c
+- (void) sendMessage:(NSString *)data;
+- (void) sendMessage:(NSString *)data withAcknowledge:(SocketIOCallback)function;
+- (void) sendJSON:(NSDictionary *)data;
+- (void) sendJSON:(NSDictionary *)data withAcknowledge:(SocketIOCallback)function;
+- (void) sendEvent:(NSString *)eventName withData:(NSDictionary *)data;
+- (void) sendEvent:(NSString *)eventName withData:(NSDictionary *)data andAcknowledge:(SocketIOCallback)function;
+</code></p>
+
+<p>So you could send a normal Message like this</p>
+
+<p><code>objective-c
+[socketIO sendMessage:@"hello world"];
+</code></p>
+
+<p>or an Event (including some data) like this</p>
+
+<p>``` objective-c
+NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+[dict setObject:@&ldquo;test1&rdquo; forKey:@&ldquo;key1&rdquo;];
+[dict setObject:@&ldquo;test2&rdquo; forKey:@&ldquo;key2&rdquo;];</p>
+
+<p>[socketIO sendEvent:@&ldquo;welcome&rdquo; withData:dict];
+```</p>
+
+<p>If you want the server to acknowledge your Message/Event you would also pass a SocketIOCallback block</p>
+
+<p>``` objective-c
+SocketIOCallback cb = ^(id argsData) {</p>
+
+<pre><code>NSDictionary *response = argsData;
+// do something with response
+</code></pre>
+
+<p>};
+[socketIO sendEvent:@&ldquo;welcomeAck&rdquo; withData:dict andAcknowledge:cb];
+```</p>
+
+<p>All delegate methods are optional &ndash; you could implement the following</p>
+
+<p><code>objective-c
+- (void) socketIODidConnect:(SocketIO *)socket;
+- (void) socketIODidDisconnect:(SocketIO *)socket; // deprecated
+- (void) socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error;
+- (void) socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet;
+- (void) socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet;
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet;
+- (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet;
+- (void) socketIO:(SocketIO *)socket onError:(NSError *)error;
+</code></p>
+
+<p>These two callbacks are deprecated &ndash; please don&rsquo;t use them anymore &ndash; they will
+be removed in upcoming releases:</p>
+
+<p><code>objective-c
+- (void) socketIOHandshakeFailed:(SocketIO *)socket;
+- (void) socketIO:(SocketIO *)socket failedToConnectWithError:(NSError *)error;
+</code></p>
+
+<p>To process an incoming Message just</p>
+
+<p>``` objective-c
+&ndash; (void) socketIO:(<a href="Classes/SocketIO.html">SocketIO</a> <em>)socket didReceiveMessage:(<a href="Classes/SocketIOPacket.html">SocketIOPacket</a> </em>)packet
+{</p>
+
+<pre><code>NSLog(@"didReceiveMessage() &gt;&gt;&gt; data: %@", packet.data);
+</code></pre>
+
+<p>}
+```</p>
+
+<h2>Authors</h2>
+
+<p>Initial project by Philipp Kyeck <a href="http://beta-interactive.de">http://beta-interactive.de</a>.<br/>
+Namespace support by Sam Lown <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x73;&#x61;&#109;&#x40;&#x63;&#x61;&#98;&#x69;&#x66;&#121;&#46;&#x63;&#x6f;&#109;">&#x73;&#97;&#109;&#64;&#x63;&#x61;&#98;&#x69;&#x66;&#121;&#x2e;&#99;&#x6f;&#109;</a> at Cabify.<br/>
+SSL support by kayleg <a href="https://github.com/kayleg">https://github.com/kayleg</a>.<br/>
+Different Socket Libraries + Error Handling by taiyangc <a href="https://github.com/taiyangc">https://github.com/taiyangc</a>.</p>
+
+<h2>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright &copy; 2011-12 Philipp Kyeck <a href="http://beta-interactive.de">http://beta-interactive.de</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &ldquo;Software&rdquo;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+						
+						
+					</div>
+					
+                        
+                    
+					
+					
+					<div class="index-column">
+						<h2 class="index-title">Class References</h2>
+						<ul>
+							
+							<li><a href="Classes/SocketIO.html">SocketIO</a></li>
+							
+							<li><a href="Classes/SocketIOJSONSerialization.html">SocketIOJSONSerialization</a></li>
+							
+							<li><a href="Classes/SocketIOPacket.html">SocketIOPacket</a></li>
+							
+							<li><a href="Classes/SocketIOTransportWebsocket.html">SocketIOTransportWebsocket</a></li>
+							
+							<li><a href="Classes/SocketIOTransportXHR.html">SocketIOTransportXHR</a></li>
+							
+						</ul>
+					</div>
+					
+					
+						
+					<div class="index-column">
+						
+						<h2 class="index-title">Protocol References</h2>
+						<ul>
+							
+							<li><a href="Protocols/SocketIODelegate.html">SocketIODelegate</a></li>
+							
+							<li><a href="Protocols/SocketIOTransport.html">SocketIOTransport</a></li>
+							
+							<li><a href="Protocols/SocketIOTransportDelegate.html">SocketIOTransportDelegate</a></li>
+							
+						</ul>
+						
+						
+					</div>
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Philipp Kyeck. All rights reserved. (Last updated: 2013-04-20)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+	
+					</div>
+				</div>
+			</div>
+		</article>		
+	</body>
+</html>

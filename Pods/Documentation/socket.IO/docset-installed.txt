@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/mneorr/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.socket.io.socket.IO-0.3.2.docset
+Time: 2013-04-20 09:38:34 +0000

@@ -1,0 +1,13 @@
+PODS:
+  - socket.IO (0.3.2):
+    - SocketRocket (~> 0.2)
+  - SocketRocket (0.2.0)
+
+DEPENDENCIES:
+  - socket.IO
+
+SPEC CHECKSUMS:
+  socket.IO: fd9cc11d061fad7b4e1d4accc2fc143af0b06d41
+  SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
+
+COCOAPODS: 0.18.1
