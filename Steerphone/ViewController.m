@@ -8,11 +8,10 @@
 
 #import "ViewController.h"
 #import <CoreMotion/CoreMotion.h>
-#import "SocketIO.h"
+#import "SocketIO+Singleton.h"
 
 @interface ViewController ()<SocketIODelegate>
 @property (strong, nonatomic) IBOutlet UILabel *connectionStatus;
-@property (strong, nonatomic) SocketIO *socketIO;
 @property (strong, nonatomic) NSOperationQueue *queue;
 @property (strong, nonatomic) CMMotionManager *motionManager;
 
@@ -30,25 +29,20 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.socketIO = [[SocketIO alloc] initWithDelegate:self];
+    [[SocketIO sharedInstance] setDelegate:self];
     self.queue = [[NSOperationQueue alloc] init];
     [self connectToSocket];
     [self listenToDeviceMotions];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [self.socketIO disconnect];
-    [super viewDidDisappear:animated];
-}
-
 #pragma mark - Private
 
 - (void)connectToSocket {
-    [self.socketIO connectToHost:@"db.whoapi.com" onPort:666];
+    [[SocketIO sharedInstance] connectToHost:@"db.whoapi.com" onPort:666];
 }
 
 - (void)maintainConnection {
-    if (self.socketIO.isConnected || self.socketIO.isConnecting) return;
+    if ([SocketIO sharedInstance].isConnected || [SocketIO sharedInstance].isConnecting) return;
     
     [self performSelector:@selector(connectToSocket) withObject:nil afterDelay:1];
 }
@@ -60,7 +54,6 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
     
     [self.motionManager startDeviceMotionUpdatesToQueue:self.queue withHandler:^(CMDeviceMotion *motion, NSError *error) {
         self.wheelValue = @(180.0f / M_PI * motion.attitude.pitch * -1);
-        NSLog(@"Wheel: %@", self.wheelValue);
         [self pingServer];
     }];
 }
@@ -90,7 +83,7 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
     if (self.brakeIsPressed) defaultParams[@"brake"] = @(YES);
     if (self.throttleIsPressed) defaultParams[@"throttle"] = @(YES);
     
-    [self.socketIO sendEvent:@"mobile-input" withData:defaultParams];
+    [[SocketIO sharedInstance] sendEvent:@"mobile-input" withData:defaultParams];
 }
 
 - (void)updateServerInBackground {
@@ -104,6 +97,7 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
 
 - (void)socketIODidConnect:(SocketIO *)socket {
     NSLog(@"SocketIO did connect! %@", socket);
+    [[SocketIO sharedInstance] sendEvent:@"device-add" withData:nil];
     self.connectionStatus.textColor = [UIColor colorWithRed:.2 green:.8 blue:.3 alpha:1];
 }
 - (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error {
@@ -116,6 +110,12 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
     NSLog(@"SocketIO error: %@", error);
     self.connectionStatus.textColor = [UIColor colorWithRed:.8 green:.2 blue:.3 alpha:1];
     [self maintainConnection];
+}
+
+#pragma mark - Compatibility
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04FDECB4C46F417F91A3995E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0235CC94653640F3B0EBB4ED /* libPods.a */; };
+		8960937C1723011C00A968D9 /* SocketIO+Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8960937B1723011C00A968D9 /* SocketIO+Singleton.m */; };
 		89D40B0A1722981F00A67BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B091722981F00A67BB3 /* UIKit.framework */; };
 		89D40B0C1722981F00A67BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B0B1722981F00A67BB3 /* Foundation.framework */; };
 		89D40B0E1722981F00A67BB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D40B0D1722981F00A67BB3 /* CoreGraphics.framework */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		0235CC94653640F3B0EBB4ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		06563053DD87499D9499E3C5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8960937A1723011C00A968D9 /* SocketIO+Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketIO+Singleton.h"; sourceTree = "<group>"; };
+		8960937B1723011C00A968D9 /* SocketIO+Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SocketIO+Singleton.m"; sourceTree = "<group>"; };
 		89D40B061722981F00A67BB3 /* Steerphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steerphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D40B091722981F00A67BB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		89D40B0B1722981F00A67BB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 				89D40B241722981F00A67BB3 /* ViewController.h */,
 				89D40B251722981F00A67BB3 /* ViewController.m */,
 				89D40B101722981F00A67BB3 /* Supporting Files */,
+				8960937A1723011C00A968D9 /* SocketIO+Singleton.h */,
+				8960937B1723011C00A968D9 /* SocketIO+Singleton.m */,
 			);
 			path = Steerphone;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				89D40B161722981F00A67BB3 /* main.m in Sources */,
 				89D40B1A1722981F00A67BB3 /* AppDelegate.m in Sources */,
 				89D40B261722981F00A67BB3 /* ViewController.m in Sources */,
+				8960937C1723011C00A968D9 /* SocketIO+Singleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +460,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Steerphone/Steerphone-Prefix.pch";
 				INFOPLIST_FILE = "Steerphone/Steerphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -466,6 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Steerphone/Steerphone-Prefix.pch";
 				INFOPLIST_FILE = "Steerphone/Steerphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
