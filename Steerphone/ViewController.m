@@ -22,6 +22,7 @@
 @end
 
 static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
+static NSString *const SERVER_URI = @"";
 
 @implementation ViewController
 
@@ -38,7 +39,7 @@ static CGFloat const UPDATE_INTERVAL = 1.0f / 20.0f;
 #pragma mark - Private
 
 - (void)connectToSocket {
-    [[SocketIO sharedInstance] connectToHost:@"db.whoapi.com" onPort:666];
+    [[SocketIO sharedInstance] connectToHost:SERVER_URI onPort:666];
 }
 
 - (void)maintainConnection {
